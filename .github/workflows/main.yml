@@ -67,9 +67,10 @@ jobs:
             path: dist/*.tar.gz
 
   wheel:
-    name: ${{ matrix.os }},${{ matrix.archs }}-wheel
+    name: ${{ matrix.os }},${{ matrix.arch }}-wheel
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         os: [ubuntu-latest,  macos-latest]
         arch: [auto]
